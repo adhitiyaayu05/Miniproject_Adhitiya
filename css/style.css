@@ -14,12 +14,14 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
+    width: 100%;
 }
 
 h2 {
     margin-bottom: 20px;
     padding-bottom: 10px;
     border-bottom: 1px solid #eee;
+    text-align: center;
 }
 
 /* Header and Navigation */
@@ -33,6 +35,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
 .logo img {
@@ -68,6 +71,7 @@ nav ul li a:hover {
 .section {
     padding: 40px 0;
     border-bottom: 1px solid #ddd;
+    width: 100%;
 }
 
 /* Home Section */
@@ -79,7 +83,7 @@ nav ul li a:hover {
 /* Slideshow Styles */
 .slideshow-container {
     position: relative;
-    max-width: 1366px;
+    max-width: 100%;
     margin: 20px auto;
     overflow: hidden;
 }
@@ -92,6 +96,8 @@ nav ul li a:hover {
 .slide img {
     width: 100%;
     height: auto;
+    max-height: 500px;
+    object-fit: cover;
 }
 
 .fade {
@@ -178,11 +184,14 @@ nav ul li a:hover {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 .facility {
     text-align: center;
     width: 150px;
+    margin-bottom: 20px;
 }
 
 .circle {
@@ -194,18 +203,20 @@ nav ul li a:hover {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-color: #f9f9f9;
 }
 
+/* Fixed image paths for GitHub Pages */
 .teacher-img {
-    background-image: url('/img/GURU.jpeg');
+    background-image: url('../img/GURU.jpeg');
 }
 
 .lab-computer {
-    background-image: url('/img/lab.jpeg');
+    background-image: url('../img/lab.jpeg');
 }
 
 .classroom-img {
-    background-image: url('/img/KELAS.jpeg');
+    background-image: url('../img/KELAS.jpeg');
 }
 
 /* Message Us Section */
@@ -293,25 +304,52 @@ footer {
 @media (max-width: 768px) {
     header {
         flex-direction: column;
+        padding: 10px;
+    }
+
+    nav {
+        width: 100%;
     }
 
     nav ul {
         margin-top: 15px;
         width: 100%;
         justify-content: center;
+        flex-wrap: wrap;
     }
 
     nav ul li {
-        margin: 0 5px;
+        margin: 5px;
+        width: calc(50% - 10px);
+    }
+    
+    nav ul li a {
+        text-align: center;
+        padding: 8px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    #home h1 {
+        font-size: 1.3rem;
+        text-align: center;
+    }
+    
+    #home p {
+        text-align: center;
     }
 
     .facilitation-container {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
     }
 
     .facility {
         margin-bottom: 20px;
+        width: calc(50% - 20px);
     }
 
     .form-container {
@@ -320,5 +358,37 @@ footer {
     
     .achievements-container {
         flex-direction: column;
+    }
+    
+    .achievement-card {
+        min-width: auto;
+    }
+    
+    .slide img {
+        max-height: 300px;
+    }
+}
+
+/* Even smaller screens */
+@media (max-width: 480px) {
+    nav ul li {
+        width: 100%;
+        margin: 5px 0;
+    }
+    
+    .facility {
+        width: 100%;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    .form-group {
+        margin-bottom: 10px;
+    }
+    
+    .slide img {
+        max-height: 200px;
     }
 }
