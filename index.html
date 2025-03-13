@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Profile Website</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header>
+        <div class="logo">
+            <img src="img/logo smancir.jpeg" alt="School Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#our-profile">Our Profile</a></li>
+                <li><a href="#achievement">Achievement</a></li>
+                <li><a href="#message-us">Message Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <div class="container">
+            <h1>Hi <span id="visitorName">Visitor</span>, Welcome To Website</h1>
+            <p>Ini adalah website latihan pertama pembuatan website sekolah</p>
+            
+            <!-- Slideshow Banner -->
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <img src="img/smancir.jpg" alt="School SMAN 1 CIRUAS">
+                </div>
+                <div class="slide fade">
+                    <img src="img/smancir2.jpg" alt="In-school display">
+                </div>
+                <div class="slide fade">
+                    <img src="img/smancir3.jpg" alt="School-wide view">
+                </div>
+                
+                <!-- Navigation dots -->
+                <div class="dots-container">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Profile Section -->
+    <section id="our-profile" class="section">
+        <div class="container">
+            <h2>Our Profile</h2>
+            <div class="profile-content">
+                <div class="banner">
+                    <h3>About Our School</h3><br>
+                    <p>SMAN 1 CIRUAS is a public high school located in the Ciruas District, Serang Regency, Banten. SMAN 1 CIRUAS was established on November 20, 1984, with the establishment decree number 0558/0/1984, under the Ministry of Education and Culture. In its educational activities, this school, which has 1,481 students, is guided by 65 professional teachers in their respective fields. The current principal of SMAN 1 CIRUAS is Yanto, and the responsible operator is Sukarno. This school has also been accredited with an A rating, with accreditation decree number 755/BAN-SM/SK/2019, dated September 9, 2019.</p>
+                </div>
+                <div class="vision-mission">
+                    <h3>Vision & Mission</h3>
+                    <h4>Vision:</h4>
+                    <p>To be a center of educational excellence that empowers students to become innovative thinkers, compassionate leaders, and responsible global citizens.</p>
+                    <h4>Mission:</h4>
+                    <p>To foster a community of lifelong learners through innovative teaching methods, comprehensive curriculum, and collaborative learning experiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Achievement Section -->
+    <section id="achievement" class="section">
+        <div class="container">
+            <h2>Achievement</h2>
+            <div class="achievements-container">
+                <div class="achievement-card">
+                    <h3>Academic Excellence</h3>
+                    <p>Our students have won the Business Plan competition at the Woderkind Festival and have also achieved gold and bronze medals in the 2023 National Student Research Olympiad (OPSI)..</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>Sports Championships</h3>
+                    <p>In the field of sports, our students are actively excelling in athletics, participating in events such as O2SN and the Tangerang Open. Additionally, we have sent representatives to various championships, including SAC Indonesia..</p>
+                </div>
+                <div class="achievement-card">
+                    <h3>Outstanding in the field of arts.</h3>
+                    <p>SMAN 1 Ciruas has achieved recognition in the field of cultural arts, one of which is the establishment of Rampak Bedug as the school's local excellence. In addition, the students of SMAN 1 Ciruas have also garnered the judges' attention with their research in the fields of cultural arts and history, focusing on the theme of the city of Surosowan Banten.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Facilitation Section -->
+<section id="facilitation" class="section">
+    <div class="container">
+        <h2>Our Facilitation</h2>
+        <div class="facilitation-container">
+            <div class="facility">
+                <div class="circle teacher-img"></div>
+                <p>Great Teaching <br>Staff</p>
+            </div>
+            <div class="facility">
+                <div class="circle lab-computer"></div>
+                <p>Lab Computer and Internet</p>
+            </div>
+            <div class="facility">
+                <div class="circle classroom-img"></div>
+                <p>Classroom</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Message Us Section -->
+    <section id="message-us" class="section">
+        <div class="container">
+            <h2>Message Us</h2>
+            <div class="form-container">
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="name">Nama :</label>
+                        <input type="text" id="name" name="name" placeholder="Nama">
+                    </div>
+                    <div class="form-group">
+                        <label for="birthdate">Tanggal Lahir :</label>
+                        <input type="date" id="birthdate" name="birthdate">
+                    </div>
+                    <div class="form-group">
+                        <label>Jenis Kelamin :</label>
+                        <div class="radio-group">
+                            <input type="radio" id="male" name="gender" value="Laki-Laki" checked>
+                            <label for="male">Laki-Laki</label>
+                            <input type="radio" id="female" name="gender" value="Perempuan">
+                            <label for="female">Perempuan</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Pesan :</label>
+                        <textarea id="message" name="message" placeholder="Pesan"></textarea>
+                    </div>
+                    <button type="submit" id="submitBtn">Submit</button>
+                </form>
+                <div id="formResult" class="form-result">
+                    <p>Current time: <span id="currentTime"></span></p>
+                    <p>Nama: <span id="resultName"></span></p>
+                    <p>Tanggal Lahir: <span id="resultBirthdate"></span></p>
+                    <p>Jenis Kelamin: <span id="resultGender"></span></p>
+                    <p>Pesan: <span id="resultMessage"></span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Created By Adhitiya Ayu Puspitasari</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
