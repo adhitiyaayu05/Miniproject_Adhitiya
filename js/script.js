@@ -1,3 +1,4 @@
+
 // Wait for DOM to load
 document.addEventListener('DOMContentLoaded', function() {
     // Get visitor's name on page load
@@ -133,4 +134,34 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
+});
+// Add to your existing script.js file
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the hamburger menu and navigation
+    const hamburger = document.querySelector('.hamburger-menu');
+    const nav = document.querySelector('nav');
+    
+    // Toggle menu when hamburger is clicked
+    hamburger.addEventListener('click', function() {
+        hamburger.classList.toggle('active');
+        nav.classList.toggle('active');
+    });
+    
+    // Close menu when a navigation link is clicked
+    document.querySelectorAll('nav a').forEach(link => {
+        link.addEventListener('click', function() {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+        });
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+        if (!nav.contains(event.target) && !hamburger.contains(event.target) && nav.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            nav.classList.remove('active');
+        }
+    });
+    
+    // Your existing code continues...
 });
