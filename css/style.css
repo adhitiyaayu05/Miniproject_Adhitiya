@@ -15,6 +15,7 @@ body {
     margin: 0 auto;
     padding: 20px;
     width: 100%;
+    justify-content: center;
 }
 
 h2 {
@@ -534,6 +535,9 @@ nav ul li a:hover {
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
+          
+          
+            
         }
 
         .nav-btn:hover {
