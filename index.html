@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Profile Website</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
     <!-- Navigation Bar -->
@@ -22,13 +22,15 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#our-profile">Our Profile</a></li>
                 <li><a href="#achievement">Achievement</a></li>
+                <li><a href="#location">School Location</a></li>
+                <li><a href="#facilitation">Our Facilitation</a></li>
                 <li><a href="#message-us">Message Us</a></li>
             </ul>
         </nav>
     </header>
 
     <!-- Home Section -->
-    <section id="home" class="section">
+     <section id="home" class="section">
         <div class="container">
             <h1>Hi <span id="visitorName">Visitor</span>, Welcome To Website</h1>
             <p>Ini adalah website latihan pertama pembuatan website sekolah</p>
@@ -96,66 +98,138 @@
         </div>
     </section>
 
-    <!-- Our Facilitation Section -->
-<section id="facilitation" class="section">
-    <div class="container">
-        <h2>Our Facilitation</h2>
-        <div class="facilitation-container">
-            <div class="facility">
-                <div class="circle teacher-img"></div>
-                <p>Great Teaching <br>Staff</p>
-            </div>
-            <div class="facility">
-                <div class="circle lab-computer"></div>
-                <p>Lab Computer and Internet</p>
-            </div>
-            <div class="facility">
-                <div class="circle classroom-img"></div>
-                <p>Classroom</p>
-            </div>
+        <!-- Location Section -->
+        <section class="section" id="location">
+        <h2 class="fade-in">School Location</h2>
+        <!-- Map Section -->
+        <div class="map-container fade-in">
+            <iframe 
+                class="map-iframe"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.0284124808163!2d106.24202969999999!3d-6.1268788999999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e41f5db6ae8b109%3A0xb4e22fde595e02aa!2sState%20Senior%20High%20School%201%20Ciruas!5e0!3m2!1sen!2sid!4v1753628608011!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                allowfullscreen
+                loading="lazy">
+            </iframe>
         </div>
-    </div>
-</section>
+        </section>
+ <!-- src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d253840.656441975!2d106.68942995!3d-6.229386500000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f3e945e34b9d%3A0x5371bf0fdad786a2!2sJakarta%2C%20Daerah%20Khusus%20Ibukota%20Jakarta!5e0!3m2!1sid!2sid!4v1635000000000!5m2!1sid!2sid" -->
 
-    <!-- Message Us Section -->
-    <section id="message-us" class="section">
+  <!-- Loading indicator -->
+    <div id="loading" class="loading">
+        Memuat halaman...
+    </div>
+
+    <!-- Error message -->
+    <div id="errorMessage" class="error-message">
+        <span id="errorText"></span>
+        <button onclick="hideError()" style="float: right; background: none; border: none; color: white; cursor: pointer; font-weight: bold;">×</button>
+    </div>
+
+    <!-- Our Facilitation Section -->
+    <section id="facilitation" class="section">
         <div class="container">
-            <h2>Message Us</h2>
-            <div class="form-container">
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="name">Nama :</label>
-                        <input type="text" id="name" name="name" placeholder="Nama">
-                    </div>
-                    <div class="form-group">
-                        <label for="birthdate">Tanggal Lahir :</label>
-                        <input type="date" id="birthdate" name="birthdate">
-                    </div>
-                    <div class="form-group">
-                        <label>Jenis Kelamin :</label>
-                        <div class="radio-group">
-                            <input type="radio" id="male" name="gender" value="Laki-Laki" checked>
-                            <label for="male">Laki-Laki</label>
-                            <input type="radio" id="female" name="gender" value="Perempuan">
-                            <label for="female">Perempuan</label>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Pesan :</label>
-                        <textarea id="message" name="message" placeholder="Pesan"></textarea>
-                    </div>
-                    <button type="submit" id="submitBtn">Submit</button>
-                </form>
-                <div id="formResult" class="form-result">
-                    <p>Current time: <span id="currentTime"></span></p>
-                    <p>Nama: <span id="resultName"></span></p>
-                    <p>Tanggal Lahir: <span id="resultBirthdate"></span></p>
-                    <p>Jenis Kelamin: <span id="resultGender"></span></p>
-                    <p>Pesan: <span id="resultMessage"></span></p>
+            <h2>Our Facilitation</h2>
+            <div class="facilitation-container">
+                <div class="facility" onclick="navigateToPage('guru.html')" data-page="guru.html" tabindex="0" role="button" aria-label="Navigate to Great Teaching Staff">
+                    <div class="circle teacher-img"></div>
+                    <p>Great Teaching <br>Staff</p>
+                </div>
+                <div class="facility" onclick="navigateToPage('komputer.html')" data-page="komputer.html" tabindex="0" role="button" aria-label="Navigate to Lab Computer and Internet">
+                    <div class="circle lab-computer"></div>
+                    <p>Lab Computer and Internet</p>
+                </div>
+                <div class="facility" onclick="navigateToPage('kelas.html')" data-page="kelas.html" tabindex="0" role="button" aria-label="Navigate to Classroom">
+                    <div class="circle classroom-img"></div>
+                    <p>Classroom</p>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+    <!-- <header> -->
+        <h1 style="text-align: center; font-weight: 700px;" >Sistem Buku Tamu Sekolah</h1>
+        <p style="text-align: center; margin-bottom: 1rem;" >Kirimkan pesan Anda kepada kami</p>
+    <!-- </header> -->
+
+    <div class="container">
+        <!-- Navigation Buttons -->
+        <!-- <div class="nav-buttons">
+            <button class="nav-btn active" onclick="showSection('message-us')">
+                📝 Kirim Pesan
+            </button> -->
+            <button class="nav-btn" onclick="showSection('messages-list')">
+                📋 Lihat Semua Pesan (<span id="messageCount">0</span>)
+            </button>
+        </div>
+
+        <!-- Message Us Section -->
+        <section id="message-us" class="section">
+            <div class="container">
+                <h2>📝 Kirim Pesan Anda</h2>
+                <div class="success-message" id="successMessage">
+                    ✅ Pesan Anda berhasil dikirim!
+                </div>
+                <div class="form-container">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">📛 Nama Lengkap:</label>
+                            <input type="text" id="name" name="name" placeholder="Masukkan nama lengkap Anda" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="birthdate">🎂 Tanggal Lahir:</label>
+                            <input type="date" id="birthdate" name="birthdate" required>
+                        </div>
+                        <div class="form-group">
+                            <label>👤 Jenis Kelamin:</label>
+                            <div class="radio-group">
+                                <input type="radio" id="male" name="gender" value="Laki-Laki" checked>
+                                <label for="male">👨 Laki-Laki</label>
+                                <input type="radio" id="female" name="gender" value="Perempuan">
+                                <label for="female">👩 Perempuan</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">💬 Pesan:</label>
+                            <textarea id="message" name="message" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                        </div>
+                        <button type="submit" id="submitBtn">🚀 Kirim Pesan</button>
+                    </form>
+                    <div id="formResult" class="form-result" style="display: none;">
+                        <h3>📋 Preview Pesan Terakhir</h3>
+                        <p><strong>⏰ Waktu:</strong> <span id="currentTime"></span></p>
+                        <p><strong>📛 Nama:</strong> <span id="resultName"></span></p>
+                        <p><strong>🎂 Tanggal Lahir:</strong> <span id="resultBirthdate"></span></p>
+                        <p><strong>👤 Jenis Kelamin:</strong> <span id="resultGender"></span></p>
+                        <p><strong>💬 Pesan:</strong> <span id="resultMessage"></span></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Messages List Section -->
+        <section id="messages-list" class="section messages-section">
+            <div class="container">
+                <div class="messages-header">
+                    <h2>📋 Semua Pesan dari Pengunjung</h2>
+                    <div>
+                        
+                        <span class="messages-count">Total: <span id="totalMessages">0</span> pesan</span>
+                        <button class="clear-btn" onclick="clearAllMessages()" title="Hapus semua pesan" style="margin-top: 10%; font-size: 100%;">
+                            🗑️ Hapus Semua
+                        </button>
+                    </div>
+                </div>
+                <div class="messages-container" id="messagesContainer">
+                    <div class="no-messages">
+                        📝 Belum ada pesan dari pengunjung.<br>
+                        Pesan akan muncul di sini setelah ada yang mengirim.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
 
     <!-- Footer -->
     <footer>
