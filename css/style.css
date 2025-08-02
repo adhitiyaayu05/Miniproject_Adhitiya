@@ -395,15 +395,15 @@ nav ul li a:hover {
         
         /* Background images - Ganti dengan path gambar yang sesuai */
         .teacher-img {
-            background-image: url('/img/GURU.jpeg')
+            background-image: url('../img/GURU.jpeg')
         }
 
         .lab-computer {
-            background-image: url('/img/lab.jpeg');
+            background-image: url('../img/lab.jpeg');
         }
 
         .classroom-img {
-            background-image: url('/img/KELAS.jpeg');
+            background-image: url('../img/KELAS.jpeg');
         }
 
         .facility p {
@@ -535,7 +535,9 @@ nav ul li a:hover {
             transition: all 0.3s;
             text-decoration: none;
             display: inline-block;
-          
+           
+            
+         
           
             
         }
